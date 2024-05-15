@@ -131,7 +131,7 @@ def search_artist(artist_name):
             })
 
     # Render the template with the artist information
-    return render_template('search.html', artists=artists)
+    return render_template('search.html', artists=artists, search=artist_name)
 
 # Run the app if this script is executed
 if __name__ == '__main__':
