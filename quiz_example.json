@@ -1,0 +1,56 @@
+{
+    "artist": {
+        "name":  "<artist_name>",
+        "uri": "<artist_uri>"
+    },
+    "questions": [
+        {
+            "question_prompt": "<question>",
+            "question_type": "multiple_choice",
+            "answers": [
+                {
+                    "answer": "<answer text>",
+                    "correct": true
+                },
+                {
+                    "answer": "<wrong answer text>",
+                    "correct": false
+                },
+                {
+                    "answer": "<wrong answer text>",
+                    "correct": false
+                },
+                {
+                    "answer": "<wrong answer text>",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question_prompt": "<question>",
+            "question_type": "short_answer",
+            "answers": [
+                {
+                    "answer": "<answer text>",
+                    "correct": true
+                }
+            ]
+        }
+        ,
+        {
+            "question_prompt": "<question>",
+            "question_type": "true_false",
+            "answers": [
+                {
+                    "answer": "True",
+                    "correct": true
+                },
+                {
+                    "answer": "False",
+                    "correct": false
+                }
+            ]
+        }
+
+    ]
+}

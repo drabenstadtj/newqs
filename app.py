@@ -17,8 +17,6 @@ SPOTIPY_REDIRECT_URI = 'http://localhost:5000/callback'
 # Spotipy authentication scope (determine what permissions your app needs)
 SCOPE = 'user-top-read'
 
-
-
 # Define a route to render the home page
 @app.route('/')
 def home():
@@ -136,6 +134,21 @@ def search_artist(artist_name):
     return render_template('search.html', artists=artists, search=artist_name)
 
 
+@app.route('/quiz/<artist_uri>')
+def search_artist(artist_uri):
+    # Retrieve token information from the session
+    token_info = session.get('token_info', None)
+    # If token information is not available, redirect the user to the login page
+    if not token_info:
+        return redirect('/login')
+    
+    # Extract the access token from the token information
+    access_token = token_info['access_token']
+    # Create a Spotify client with the access token
+    sp = spotipy.Spotify(auth=access_token)
+
+    # Render the template with the artist information
+    return render_template('search.html', quiz=quiz)
 
 # Run the app if this script is executed
 if __name__ == '__main__':
