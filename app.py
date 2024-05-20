@@ -17,6 +17,8 @@ SPOTIPY_REDIRECT_URI = 'http://localhost:5000/callback'
 # Spotipy authentication scope (determine what permissions your app needs)
 SCOPE = 'user-top-read'
 
+
+
 # Define a route to render the home page
 @app.route('/')
 def home():
@@ -132,6 +134,8 @@ def search_artist(artist_name):
 
     # Render the template with the artist information
     return render_template('search.html', artists=artists, search=artist_name)
+
+
 
 # Run the app if this script is executed
 if __name__ == '__main__':
